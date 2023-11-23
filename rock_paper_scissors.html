@@ -5,77 +5,13 @@
   <title>Page Title</title>
 </head>
 <body>
-  <script>
-    function getComputerChoice() {
-      var game = ['rock','paper','scissors'];
-      var number = Math.floor(Math.random() * game.length);
-      var a = game[number];
-      return a;
-    }
-    
+    <button id = 'rock' class = "option">rock</button>
+    <button id = 'paper' class = "option">paper</button>
+    <button id = 'scissors' class = "option">scissors</button>
 
-    
-    function round1(playerSelection,computerselection) {
-      let score = '';
-      if (playerSelection === 'rock' && computerselection === 'scissors') {
-        score = 'You win! Rock beats scissors';
-      }
-      else if (playerSelection === 'rock' && computerselection === 'rock') {
-        score ='It is a tie!';
-      }
-      else if (playerSelection === 'rock' && computerselection === 'paper') {
-        score = 'You lose! Paper beats rock';
-      }
-      if (playerSelection === 'paper' && computerselection === 'rock') {
-        score = 'You win! Paper beats rock';
-      }
-      else if (playerSelection === 'paper' && computerselection === 'paper') {
-        score = 'It is a tie!';
-      }
-      else if (playerSelection === 'paper' && computerselection === 'scissors') {
-        score = 'You lose! Scissors beats paper';
-      }
-      if (playerSelection === 'scissors' && computerselection === 'paper') {
-        score = 'You win! Scissors beats paper';
-      }
-      else if (playerSelection === 'scissors' && computerselection === 'scissors') {
-        score = 'It is a tie!';
-      }
-      else if (playerSelection === 'scissors' && computerselection === 'rock') {
-        score = 'You lose! Rock beats scissors';
-      }
-      return score;
-    }
-    
-    
-    // Your JavaScript goes here!
+    <div id = "results"></div>
 
-    function game() {
-      let counter = 0;
-      let opCounter = 0;
-      let process = '';
-      for(let i=0;i<5;i++) {
-        playerSelection = prompt('Choose rock, paper, or scissors: ');
-        let b = getComputerChoice();
-        process = round1(playerSelection,b);
-        if (process.toLowerCase().includes("you win")) {
-          counter++;
-        }
-        if (process.toLowerCase().includes("you lose")) {
-          opCounter++;
-        }
-        console.log(process);
-      }
-      if (counter > opCounter) {
-        console.log("Congratulations, you win!");
-      }
-      else if (opCounter > counter) {
-        console.log("Sorry, you lost.");
-      }
-    }
-
-    game();
-    //console.log(round1(playerSelection,a));
-  </script>
+    <script src = "rpc.js"></script>
 </body>
 </html>
+
